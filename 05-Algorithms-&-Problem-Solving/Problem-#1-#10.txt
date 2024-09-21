@@ -1,0 +1,174 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Multiplication Table Problem #1
+void printTitle() {
+    cout << "\n\n\t\t\t\t\t\t\t" << "Multiplication Table From 1 to 10 \n\n";
+}
+
+void printDashes() {
+    int i;
+    
+    for (i = 1; i <= 14; i++) cout << "______";
+    cout << "\n";
+}
+
+void printHead() {
+    int i;
+    
+    printTitle();
+    
+    for (i = 0; i <= 10; i++)
+    {
+        if (i == 0) cout << "\t\t";
+        else cout << i << "\t\t";
+        if (i == 10) cout << "\n";
+    }
+    
+    printDashes();
+}
+
+void printColumns() {
+    int i, j;
+    
+   for (i = 1; i <= 10; i++)
+    {
+        cout << i;
+        cout << "\t|\t";
+        
+        for (j = 1; j <= 10; j++) cout << i * j << "\t\t";
+        
+        cout << "\n";
+    }
+    
+}
+
+void printMultiplicationTable() {
+    printHead();
+    printColumns();
+}
+
+// PerfectNumber Problem #4
+int isPerfectNumber(int number) {
+    int i, sum = 0;
+    
+    for (i = 1; i < number; i++) if (!(number % i)) sum += i;
+    
+    if (sum == number) return (1);
+    
+    return (0);
+}
+
+void printPerfectNumber(int number) {
+    int i;
+    
+    for (i = 1; i <= number; i++) if (isPerfectNumber(i)) cout << i << endl;
+}
+
+// Read a number and print it in a reversed order Problem #5
+void printNumberInReversedOrder(int number) {
+    int remainder = 0;
+    
+    while (number > 0)
+    {
+        remainder = number % 10;
+        number = number / 10;
+        cout << remainder << endl;
+    }
+    
+    
+    // int i;
+    
+    // string numberToStr = to_string(number);
+    // int strLen = numberToStr.length();
+    
+    // for (i = strLen; i >= 0; i--) cout << numberToStr[i] << endl;
+}
+
+// Read a number and print the sum of its digits Problem #6
+void printSumNumberDigits(int number) {
+    int sum = 0;
+    
+    while (number > 0)
+    {
+        sum = sum + (number % 10);
+        number = number / 10;
+    }
+    cout << sum << endl;
+}
+
+// Read a number and print it reversed Problem #7
+int reverseNumber(int number) {
+   int remainder = 0, number2 = 0;
+    
+    while (number > 0)
+    {
+        remainder = number % 10;
+        number = number / 10;
+        number2 = number2 * 10 + remainder;
+    }
+    
+    return (number2);
+}
+
+void printNumberReversed(int number) {
+        cout << reverseNumber(number);
+}
+
+// Read a digit and a number, then print digit frequency in that number Problem #8
+int countDigitsInNumber(int number, short digit) {
+   int remainder = 0, numOfDigits = 0;
+    
+    while (number > 0)
+    {
+        remainder = number % 10;
+        number = number / 10;
+        if (remainder == digit) numOfDigits++;
+    }
+    
+    return (numOfDigits);
+}
+
+void printNumberOfDigits(int number, short digit) {
+        cout << "Digit " << digit << " Frequency is " << countDigitsInNumber(number, digit) << " Time(s)";
+}
+
+// Read a number, then print all digit frequency in that number Problem #9
+void printNumberOfAllDigits(int number) {
+    int i, numOfDigits;
+    
+    for (i = 0; i < 10; i++)
+    {
+        numOfDigits = countDigitsInNumber(number, i);
+        if (numOfDigits)
+            cout << "Digit " << i << " Frequency is " << numOfDigits << " Time(s)\n";
+    }
+}
+
+// Read a number and print it in order from left to right Problem #10
+void printNumberFromLeftToRight(int number) {
+    printNumberInReversedOrder(reverseNumber(number));
+}
+
+int main() {
+    
+    // printNumberFromLeftToRight(123456);
+    
+    // printNumberOfAllDigits(11244466);
+    
+    // printNumberOfDigits(1223222, 2);
+    
+    // printNumberReversed(1234);
+    
+    // printSumNumberDigits(1234);
+    
+    // printNumberInReversedOrder(1231045);
+    
+    // cout << "==============================\n";
+    // printPerfectNumber(10000);
+
+    // printMultiplicationTable();
+    return 0;
+}
