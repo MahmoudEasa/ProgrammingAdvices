@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+// https://www.programiz.com/online-compiler/093Tt4onEiuhB
+
 // Multiplication Table Problem #1
 void printTitle() {
     cout << "\n\n\t\t\t\t\t\t\t" << "Multiplication Table From 1 to 10 \n\n";
@@ -152,7 +154,99 @@ void printNumberFromLeftToRight(int number) {
     printNumberInReversedOrder(reverseNumber(number));
 }
 
+// Read a number and check if it is Palindrome? Problem #11
+// Palindrome isa number that reads the same from right to left
+bool isPalindrome(int number) {
+    return reverseNumber(number) == number;
+}
+
+void printIsPalindrome(int number) {
+    if (isPalindrome(number))
+        cout << "Yes , it is a palindrome number.\n";
+    else 
+        cout << "No , it is NOT a palindrome number.\n";
+}
+
+// Read a number and print inverted pattern Problem #12
+void printInvertedPattren(int number) {
+    int i, j;
+    
+    for (i = number; i > 0; i--)
+    {
+        for (j = 0; j < i; j++)
+            cout << i;
+        cout << endl;
+    }
+}
+
+// Read a number and print inverted pattern as follows Problem #13
+void printInvertedPattrenAsFollows(int number) {
+    int i, j;
+    
+    for (i = 1; i <= number; i++)
+    {
+        for (j = 0; j < i; j++)
+            cout << i;
+        cout << endl;
+    }
+}
+
+// Read a number and print inverted letter pattern as follows Problem #14
+void printInvertedPattrenLetterAsFollows(int number) {
+    int i, j;
+    // char chars [] = "ABCDEFGHIJKLMNOPQRSTUVWQYZ";
+    
+    for (i = number; i > 0; i--)
+    {
+        for (j = 0; j < i; j++)
+            cout << char(65 + i - 1);
+        cout << endl;
+    }
+    
+    // for (i = (number - 1); i >= 0; i--)
+    // {
+    //     for (j = 0; j <= i; j++)
+    //         cout << chars[i];
+    //     cout << endl;
+    // }
+}
+
+
+// Read a number and print letter pattern as follows Problem #15
+void printPattrenLetterAsFollows(int number) {
+    int i, j;
+    
+    for (i = 1; i <= number; i++)
+    {
+        for (j = 0; j < i; j++)
+            cout << char(65 + i - 1);
+        cout << endl;
+    }
+}
+
+
 int main() {
+    
+    
+    // printPattrenLetterAsFollows(3);
+    // cout << "==============================\n";
+    // printPattrenLetterAsFollows(5);
+    
+    // printInvertedPattrenLetterAsFollows(3);
+    // cout << "==============================\n";
+    // printInvertedPattrenLetterAsFollows(5);
+    
+    // printInvertedPattrenAsFollows(9);
+    
+    // printInvertedPattren(3);
+    // cout << "==============================\n";
+    // printInvertedPattren(5);
+    // cout << "==============================\n";
+    // printInvertedPattren(9);
+    
+    // printIsPalindrome(1234);
+    // printIsPalindrome(12321);
+    // printIsPalindrome(11211);
     
     // printNumberFromLeftToRight(123456);
     
